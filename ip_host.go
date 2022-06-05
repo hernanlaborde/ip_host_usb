@@ -86,48 +86,6 @@ func main() {
 
 	sendSecretMessageToFTP(&output_message)
 
-	/*
-		// FTP Connection
-		config := goftp.Config{
-			User:               "remote_user",
-			Password:           "Password",
-			ConnectionsPerHost: 10,
-			Timeout:            10 * time.Second,
-			Logger:             os.Stderr,
-		}
-
-
-		client, err := goftp.DialConfig(config, "192.168.1.45:21")
-		if err != nil {
-			panic(err)
-		}
-
-		log.Println("Opening File ...")
-
-		output_filename := "ip_host.txt"
-
-		output_file, err := os.Create(output_filename)
-		if err != nil {
-			log.Fatal(err)
-		}
-
-		defer output_file.Close()
-		_, err2 := output_file.WriteString(output_message)
-		if err2 != nil {
-			log.Fatal(err2)
-		}
-
-		output_file, err = os.Open(output_filename)
-		if err != nil {
-			panic(err)
-		}
-
-		// Upload a file from disk
-		log.Println("Sending File ...")
-		err = client.Store("/usuario_remoto/output_file.txt", output_file)
-		if err != nil {
-			panic(err)
-		}
-	*/
+	log.Println("Process ends sucessfully.")
 
 }
